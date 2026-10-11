@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/5-react/', // точное имя вашего репозитория
+  base: '/55task/' // точное имя вашего репозитория
 })
