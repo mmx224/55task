@@ -2,105 +2,148 @@ import './App.css';
 
 function App() {
   return (
-    <div className="layout-wrapper">
-      <div className="cv-card">
+    <div className="page-container">
+      <div className="bento-grid">
         
-        {/* Левая колонка (Сайдбар с контактами, навыками и языками) */}
-        <aside className="cv-sidebar">
-          <div className="avatar-circle">АА</div>
+        {/* Карточка 1: Шапка / Приветствие */}
+        <header className="card hero-card">
+          <div className="status-badge">
+            <span className="status-dot"></span> Открыта к стажировкам и проектам
+          </div>
+          <h1>Тургунбаева Айбакыт</h1>
+          <p className="hero-subtitle">
+            Junior Fullstack Developer | 19 лет
+          </p>
+          <p className="hero-desc">
+            Студентка 2 курса КГИПИ направления «Веб-технологии». Увлекаюсь созданием 
+            клиент-серверных приложений, проектированием баз данных и написанием чистого, поддерживаемого кода.
+          </p>
+        </header>
+
+        {/* Карточка 2: Контакты и локация */}
+        <section className="card contact-card">
+          <h2 className="card-title">Контакты</h2>
+          <ul className="info-list">
+            <li>
+              <span className="label">Локация</span>
+              <span className="value">Бишкек / Ош</span>
+            </li>
+            <li>
+              <span className="label">Email</span>
+              <span className="value">aibakyt.t@gmail.com</span>
+            </li>
+            <li>
+              <span className="label">Telegram</span>
+              <span className="value">@aibakyt_t</span>
+            </li>
+            <li>
+              <span className="label">GitHub</span>
+              <span className="value">github.com/aibakyt</span>
+            </li>
+          </ul>
+        </section>
+
+        {/* Карточка 3: Технологический стек */}
+        <section className="card skills-card">
+          <h2 className="card-title">Стек технологий</h2>
+          <div className="skill-groups">
+            <div>
+              <span className="skill-cat">Frontend:</span>
+              <div className="chips">
+                <span className="chip">React</span>
+                <span className="chip">JavaScript (ES6+)</span>
+                <span className="chip">HTML5 / SCSS</span>
+                <span className="chip">Bootstrap</span>
+              </div>
+            </div>
+            <div>
+              <span className="skill-cat">Backend & Базы данных:</span>
+              <div className="chips">
+                <span className="chip">Python</span>
+                <span className="chip">Django REST</span>
+                <span className="chip">PostgreSQL</span>
+                <span className="chip">SQLite</span>
+              </div>
+            </div>
+            <div>
+              <span className="skill-cat">Инструменты:</span>
+              <div className="chips">
+                <span className="chip">Git / GitHub</span>
+                <span className="chip">Postman</span>
+                <span className="chip">VS Code</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Карточка 4: Проекты */}
+        <section className="card projects-card">
+          <h2 className="card-title">Учебные и практические проекты</h2>
           
-          <div className="sidebar-section">
-            <h3>Контакты</h3>
-            <p><strong>Локация:</strong> Бишкек / Ош</p>
-            <p><strong>Email:</strong> aymeerim.ad@gmail.com</p>
-            <p><strong>GitHub:</strong> github.com/aymeerim</p>
-            <p><strong>Telegram:</strong> @aymeerim_ad</p>
-          </div>
-
-          <div className="sidebar-section">
-            <h3>Hard Skills</h3>
-            <div className="tags-container">
-              <span className="tag">HTML5 / CSS3</span>
-              <span className="tag">JavaScript (ES6+)</span>
-              <span className="tag">React</span>
-              <span className="tag">Figma</span>
-              <span className="tag">Tailwind CSS</span>
-              <span className="tag">Git & GitHub</span>
-              <span className="tag">UI/UX Прототипирование</span>
+          <div className="project-item">
+            <div className="project-top">
+              <h3>UniPortal — Студенческий портал расписания</h3>
+              <span className="tech-tag">React + Django REST</span>
             </div>
-          </div>
-
-          <div className="sidebar-section">
-            <h3>Языки</h3>
-            <ul className="lang-list">
-              <li>Кыргызский — родной</li>
-              <li>Русский — свободный</li>
-              <li>Английский — B2 (Upper-Intermediate)</li>
-              <li>Немецкий — A2 (в процессе)</li>
-            </ul>
-          </div>
-        </aside>
-
-        {/* Правая колонка (Основной контент) */}
-        <main className="cv-main">
-          <header className="main-header">
-            <h1>Адилбекова Аймээрим</h1>
-            <p className="role-title">Frontend Developer | UI/UX Designer (19 лет)</p>
-          </header>
-
-          <section className="main-section">
-            <h2>О себе</h2>
-            <p className="summary-text">
-              Студентка 2 курса КГИПИ по направлению «Веб-технологии». Увлекаюсь созданием 
-              интуитивно понятных, адаптивных веб-интерфейсов и внимательна к деталям визуального дизайна. 
-              Люблю объединять чистый код на React с эстетичным дизайном из Figma.
+            <p>
+              Сервис интерактивного расписания занятий, отслеживания дедлайнов и учета посещаемости 
+              для студенческих групп КГИПИ.
             </p>
-          </section>
+          </div>
 
-          <section className="main-section">
-            <h2>Проекты</h2>
-            
-            <div className="project-card">
-              <div className="project-header">
-                <h3>EcoBishkek — Сервис эко-инициатив</h3>
-                <span className="project-badge">React, Tailwind</span>
-              </div>
-              <p>
-                Веб-приложение с интерактивной картой точек сбора вторсырья в Бишкеке. 
-                Реализован удобный поиск, фильтрация по категориям и адаптивный дизайн.
-              </p>
+          <div className="project-item">
+            <div className="project-top">
+              <h3>LibraryHub — Каталог книжного фонда</h3>
+              <span className="tech-tag">Python + PostgreSQL</span>
             </div>
+            <p>
+              CRUD-приложение для учета литературы, бронирования учебных пособий и управления читательскими билетами.
+            </p>
+          </div>
 
-            <div className="project-card">
-              <div className="project-header">
-                <h3>StudyTracker — Студенческий планировщик</h3>
-                <span className="project-badge">JavaScript, LocalStorage</span>
-              </div>
-              <p>
-                Канбан-доска для управления дедлайнами и учебными заданиями семестра с автосохранением прогресса.
-              </p>
+          <div className="project-item">
+            <div className="project-top">
+              <h3>EventSpace — Бронирование рабочих мест</h3>
+              <span className="tech-tag">React + LocalStorage</span>
             </div>
+            <p>
+              Адаптивный интерфейс для резервации зон коворкинга с фильтрацией по времени и удобствам.
+            </p>
+          </div>
+        </section>
 
-            <div className="project-card">
-              <div className="project-header">
-                <h3>Редизайн арт-галереи</h3>
-                <span className="project-badge">Figma, UI/UX</span>
-              </div>
-              <p>
-                Полная разработка дизайн-системы, прототипа мобильной и десктопной версий для виртуальной галереи искусств.
-              </p>
-            </div>
-          </section>
+        {/* Карточка 5: Образование */}
+        <section className="card education-card">
+          <h2 className="card-title">Образование</h2>
+          <div className="edu-info">
+            <p className="edu-name">Кыргызско-Германский институт прикладной информатики (КГИПИ)</p>
+            <p className="edu-meta">2024 — 2028 | Бакалавриат, 2 курс</p>
+            <p className="edu-spec">Профиль: «Веб-технологии»</p>
+          </div>
+        </section>
 
-          <section className="main-section">
-            <h2>Образование</h2>
-            <div className="education-block">
-              <h3>Кыргызско-Германский институт прикладной информатики (КГИПИ)</h3>
-              <p className="edu-dates">2024 — 2028 (2 курс)</p>
-              <p>Бакалавриат, направление «Веб-технологии»</p>
+        {/* Карточка 6: Языковые навыки */}
+        <section className="card languages-card">
+          <h2 className="card-title">Языки</h2>
+          <div className="languages-grid">
+            <div className="lang-box">
+              <span className="lang-name">Кыргызский</span>
+              <span className="lang-level">Родной</span>
             </div>
-          </section>
-        </main>
+            <div className="lang-box">
+              <span className="lang-name">Русский</span>
+              <span className="lang-level">Свободный</span>
+            </div>
+            <div className="lang-box">
+              <span className="lang-name">Немецкий</span>
+              <span className="lang-level">B1 (КГИПИ)</span>
+            </div>
+            <div className="lang-box">
+              <span className="lang-name">Английский</span>
+              <span className="lang-level">B1 (Intermediate)</span>
+            </div>
+          </div>
+        </section>
 
       </div>
     </div>
